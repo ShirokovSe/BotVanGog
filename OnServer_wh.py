@@ -46,7 +46,7 @@ NOISE_SIZE = 150
 FEATURE_MAP_GEN = 64
 
 #инициализация переменных для бота
-TOKEN = '5017870135:AAEn34eZMlsbFInerN0Dd66Kd3ilkrvVU6k'
+TOKEN = 'TOKEN'
 PATH = './'
 USER_PATH = './users/'
 bot = Bot(token = TOKEN)
@@ -397,7 +397,7 @@ async def delete_message(msg: types.Message, state: FSMContext):
     else:
         await bot.delete_message(msg.from_user.id, msg.message_id)
 
-#картинки, присланные в неподходящих разделах удаляются
+#картинки, присланные в неподходящих разделах, удаляются
 @dp.message_handler(content_types=[ContentType.PHOTO, ContentType.DOCUMENT],state = [FSMAdmin.generation,FSMAdmin.menu])
 async def delete_photo(msg: types.Message, state:FSMContext):
     await bot.delete_message(msg.from_user.id, msg.message_id)
