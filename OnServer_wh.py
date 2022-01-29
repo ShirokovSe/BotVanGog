@@ -1,4 +1,3 @@
-# /bin/python3
 from aiogram import Bot, types
 import asyncio
 from aiogram.types import InputFile, ContentType, base, \
